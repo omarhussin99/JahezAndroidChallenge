@@ -6,9 +6,8 @@ Hi and welcome to Jahez's Android Challenge
 You're asked to make an app that presents a list of restaurants.
 
 The app should have:
-- [ ] Ability to sort by distance, rating, or offers.
-- [ ] search functionality
-- [ ] settings screen to change the app's langauge. 
+1. Ability to sort by one dimension either distance, rating, or offers.
+2. Settings screen to change the app's langauge. 
 
 You can find restaurants data at the following url:
 
