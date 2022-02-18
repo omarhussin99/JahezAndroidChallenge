@@ -1,0 +1,128 @@
+ext {
+
+    gradle_version = '7.0.2'
+    kotlin_version = '1.6.10'
+    dagger_version = "2.38.1"
+    safe_args_version = "2.4.0-alpha06"
+
+    //core versions
+    def appcompat_version = '1.4.1'
+    def constraint_layout_version = '2.1.3'
+    def fragment_version = "1.4.0-alpha06"
+
+    // testing versions
+    def junit_version = "4.13.2"
+    def junit_android_test_version = "1.1.3"
+    def espresso_core_version = "3.4.0"
+
+    //retrofit versions
+    def retrofit_version = "2.9.0"
+    def okHttp_logging_interceptor_version = "4.9.1"
+
+    //coroutines versions
+    def coroutines_version = "1.5.0"
+
+    // lifecycle versions
+    def lifecycle_version = "2.3.1"
+    def arch_version = "2.1.0"
+
+    //nav component versions
+    def nav_version = "2.4.0-alpha06"
+
+    //dagger versions
+    def hilt_version = "2.38.1"
+
+    //glide versions
+    def glide_version = "4.12.0"
+
+    //sdp & ssp versions
+    def sizing_version = "1.0.6"
+
+    //multidex
+    def multidex_version = "2.0.1"
+
+    baseLibs = [
+            "androidx.appcompat:appcompat:$appcompat_version",
+            "androidx.constraintlayout:constraintlayout:$constraint_layout_version",
+            "androidx.fragment:fragment-ktx:$fragment_version",
+            "androidx.test.ext:junit-ktx:1.1.3"
+    ]
+
+    testImplementationLibs = [
+            "junit:junit:$junit_version",
+            "androidx.arch.core:core-testing:$arch_version"
+    ]
+
+    androidTestImplementationLibs = [
+            "androidx.test.ext:junit:$junit_android_test_version",
+            "androidx.test.espresso:espresso-core:$espresso_core_version"
+    ]
+
+    networkingLibs = [
+            "com.squareup.retrofit2:retrofit:$retrofit_version",
+            "com.squareup.retrofit2:converter-gson:$retrofit_version",
+            "com.squareup.okhttp3:logging-interceptor:$okHttp_logging_interceptor_version",
+    ]
+
+    coroutinesLibs = [
+            "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version",
+            "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+    ]
+
+    navigationLibs = [
+            "androidx.navigation:navigation-fragment-ktx:$nav_version",
+            "androidx.navigation:navigation-ui-ktx:$nav_version"
+    ]
+
+    lifecycleLibs = [
+            "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version",
+            "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version",
+            "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version",
+            "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version",
+            "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version",
+    ]
+
+    daggerLibs = [
+            "com.google.dagger:hilt-android:$hilt_version"
+    ]
+
+    daggerKapt = [
+            "com.google.dagger:hilt-compiler:$hilt_version"
+    ]
+
+    glideLibs = [
+            "com.github.bumptech.glide:glide:$glide_version"
+    ]
+
+    glideKapt = [
+            "com.github.bumptech.glide:compiler:$glide_version"
+    ]
+
+    sizingLibs = [
+            "com.intuit.sdp:sdp-android:$sizing_version",
+            "com.intuit.ssp:ssp-android:$sizing_version"
+    ]
+
+    multiDex = [
+            "androidx.multidex:multidex:$multidex_version"
+    ]
+
+    coreLibs = [
+            baseLibs,
+            networkingLibs,
+            coroutinesLibs,
+            navigationLibs,
+            lifecycleLibs,
+            daggerLibs
+    ]
+
+    thirdPartyLibs = [
+            glideLibs,
+            sizingLibs
+    ]
+
+    coreKapt = [
+            daggerKapt,
+            glideKapt
+    ]
+}
