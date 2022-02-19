@@ -1,7 +1,8 @@
-package net.jahez.jahezchallenge.feature_home.data.dto
+package net.jahez.jahezchallenge.feature_home.data.remote.dto
 
 
 import com.google.gson.annotations.SerializedName
+import net.jahez.jahezchallenge.feature_home.data.local.entity.RestaurantEntity
 
 data class RestaurantDto(
     @SerializedName("description")
@@ -13,11 +14,24 @@ data class RestaurantDto(
     @SerializedName("hours")
     val hours: String? = null,
     @SerializedName("id")
-    val id: Int? = null,
+    val id: Int,
     @SerializedName("image")
     val image: String? = null,
     @SerializedName("name")
     val name: String? = null,
     @SerializedName("rating")
     val rating: Double? = null
-)
+){
+    fun toRestaurantEntity():RestaurantEntity{
+        return RestaurantEntity(
+            description = description,
+            distance = distance,
+            hasOffer = hasOffer,
+            hours = hours,
+            id = id,
+            image = image,
+            name = name,
+            rating = rating
+        )
+    }
+}

@@ -1,6 +1,6 @@
 package net.jahez.jahezchallenge.feature_home.data.remote
 
-import net.jahez.jahezchallenge.feature_home.data.dto.RestaurantDto
+import net.jahez.jahezchallenge.feature_home.data.remote.dto.RestaurantDto
 import retrofit2.http.GET
 
 interface ApiServices {
