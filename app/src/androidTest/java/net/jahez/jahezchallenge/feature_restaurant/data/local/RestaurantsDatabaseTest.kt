@@ -1,4 +1,4 @@
-package net.jahez.jahezchallenge.feature_home.data.local
+package net.jahez.jahezchallenge.feature_restaurant.data.local
 
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
@@ -6,7 +6,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.common.truth.Truth.assertThat
 import junit.framework.TestCase
 import kotlinx.coroutines.runBlocking
-import net.jahez.jahezchallenge.feature_home.data.local.entity.RestaurantEntity
+import net.jahez.jahezchallenge.feature_restaurant.data.local.entity.RestaurantEntity
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
