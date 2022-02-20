@@ -1,13 +1,6 @@
-package net.jahez.jahezchallenge.feature_home.data.local.entity
+package net.jahez.jahezchallenge.feature_restaurant.domain.model
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
-
-
-@Entity(tableName = "restaurants")
-data class RestaurantEntity(
-    @PrimaryKey
-    val id: Int,
+data class Restaurant(
     val description: String? = null,
     val distance: Double? = null,
     val hasOffer: Boolean? = null,

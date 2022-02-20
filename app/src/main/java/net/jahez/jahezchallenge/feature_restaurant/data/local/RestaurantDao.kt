@@ -1,10 +1,10 @@
-package net.jahez.jahezchallenge.feature_home.data.local
+package net.jahez.jahezchallenge.feature_restaurant.data.local
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import net.jahez.jahezchallenge.feature_home.data.local.entity.RestaurantEntity
+import net.jahez.jahezchallenge.feature_restaurant.data.local.entity.RestaurantEntity
 
 @Dao
 interface RestaurantDao {
