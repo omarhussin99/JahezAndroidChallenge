@@ -122,6 +122,10 @@ ext {
             "androidx.multidex:multidex:$multidex_version"
     ]
 
+    localization = [
+            'com.akexorcist:localization:1.2.11'
+    ]
+
     coreLibs = [
             baseLibs,
             networkingLibs,
@@ -134,7 +138,8 @@ ext {
 
     thirdPartyLibs = [
             glideLibs,
-            sizingLibs
+            sizingLibs,
+            localization
     ]
 
     coreKapt = [

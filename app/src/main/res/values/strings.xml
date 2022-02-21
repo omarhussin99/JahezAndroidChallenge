@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Jahez Challenge</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="change_language">Change language</string>
+    <string name="sort">Sort</string>
+    <string name="distance">Distance</string>
+    <string name="rating">Rating</string>
+    <string name="offer">Offer</string>
+    <string name="has_offer">Has offer</string>
+    <string name="no_offer">No offer</string>
+
 </resources>

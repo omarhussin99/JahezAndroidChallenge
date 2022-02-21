@@ -19,7 +19,9 @@ class RestaurantRepositoryImpl @Inject constructor (
     override fun getRestaurants(): Flow<Resource<List<Restaurant>>> = flow {
         emit(Resource.Loading())
 
-        val localRestaurants = dao.getAllRestaurants().map { it.toRestaurant() }
+        val localRestaurants = dao.getAllRestaurants()
+            .map { it.toRestaurant() }
+            .sortedBy {it.distance}
 
         try {
             val remoteRestaurants = apiServices.getRestaurants()
@@ -37,8 +39,14 @@ class RestaurantRepositoryImpl @Inject constructor (
             ))
         }
 
-        val newLocalRestaurants = dao.getAllRestaurants().map { it.toRestaurant() }
+        val newLocalRestaurants = dao.getAllRestaurants().
+        map { it.toRestaurant() }.
+        sortedBy {it.distance}
         emit(Resource.Success(data = newLocalRestaurants))
+    }
+
+    override fun getStoredRestaurants(): Flow<List<Restaurant>> = flow {
+        emit(dao.getAllRestaurants().map { it.toRestaurant() })
     }
 
 }

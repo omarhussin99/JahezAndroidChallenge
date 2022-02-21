@@ -21,7 +21,7 @@ data class RestaurantEntity(
         Restaurant(
             description = description,
             distance = distance,
-            hasOffer = hasOffer,
+            hasOffer = if (hasOffer!!) 1.0 else 0.0,
             hours = hours,
             image = image,
             name = name,
