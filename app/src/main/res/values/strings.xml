@@ -8,5 +8,7 @@
     <string name="offer">Offer</string>
     <string name="has_offer">Has offer</string>
     <string name="no_offer">No offer</string>
-
+    <string name="done">Done</string>
+    <string name="english" translatable="false">English</string>
+    <string name="arabic" translatable="false">العربية</string>
 </resources>

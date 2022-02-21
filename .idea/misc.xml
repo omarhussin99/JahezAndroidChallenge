@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_language.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_language_black.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_sort.xml" value="0.1635" />
         <entry key="app/src/main/res/drawable/ic_star.xml" value="0.1635" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2109704641350211" />

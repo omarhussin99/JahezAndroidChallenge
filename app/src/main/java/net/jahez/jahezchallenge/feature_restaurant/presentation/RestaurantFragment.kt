@@ -1,5 +1,6 @@
 package net.jahez.jahezchallenge.feature_restaurant.presentation
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -14,6 +15,7 @@ import net.jahez.jahezchallenge.feature_restaurant.domain.model.Language
 import net.jahez.jahezchallenge.feature_restaurant.domain.model.Restaurant
 import net.jahez.jahezchallenge.feature_restaurant.domain.model.RestaurantOrder
 import javax.inject.Inject
+
 
 @AndroidEntryPoint
 class RestaurantFragment : Fragment() {
@@ -52,7 +54,7 @@ class RestaurantFragment : Fragment() {
     }
 
     private fun setupRV() {
-     binding!!.recyclerView.adapter = restaurantAdapter
+     binding!!.restaurantRecyclerView.adapter = restaurantAdapter
     }
 
     private fun initObservation(){
@@ -92,17 +94,30 @@ class RestaurantFragment : Fragment() {
                 viewModel.sortedRestaurantsLiveData(RestaurantOrder.Offers)
             }
             R.id.action_change_language -> {
-                changeLanguage()
+                showLanguagesDialog()
             }
         }
         return super.onOptionsItemSelected(item)
     }
 
-    private fun changeLanguage(){
-        val lang = (requireActivity() as LocalizationActivity).getCurrentLanguage().toString()
-        if (lang == Language.ENGLISH.toString()){
+    private fun showLanguagesDialog(){
+        val items = arrayOf(getString(R.string.arabic), getString(R.string.english))
+        AlertDialog.Builder(requireContext())
+            .setTitle(getString(R.string.change_language))
+            .setIcon(R.drawable.ic_language_black)
+            .setSingleChoiceItems(items, 0,null)
+            .setPositiveButton(getString(R.string.done)) { dialog, _ ->
+                val selectedPosition = (dialog as AlertDialog).listView.checkedItemPosition
+                dialog.dismiss()
+                changeLanguage(selectedPosition)
+            }
+            .show()
+    }
+
+    private fun changeLanguage(selectionId:Int){
+        if (selectionId == 0){
             (requireActivity() as LocalizationActivity).setLanguage(Language.ARABIC.toString())
-        }else if (lang == Language.ARABIC.toString()){
+        }else if (selectionId == 1){
             (requireActivity() as LocalizationActivity).setLanguage(Language.ENGLISH.toString())
         }
     }

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Jahez Challenge</string>
     <string name="change_language">تغيير اللغة</string>
     <string name="sort">ترتيب</string>
     <string name="distance">المسافة</string>
     <string name="rating">التقييم</string>
     <string name="offer">العروض</string>
-    <string name="has_offer">Has offer</string>
-    <string name="no_offer">No offer</string>
+    <string name="has_offer">توجد عروض</string>
+    <string name="no_offer">لا توجد عروض</string>
+    <string name="done">تم</string>
 </resources>
