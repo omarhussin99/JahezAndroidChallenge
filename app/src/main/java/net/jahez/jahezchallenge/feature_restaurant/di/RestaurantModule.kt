@@ -19,7 +19,7 @@ object RestaurantModule {
 
     @Provides
     @Singleton
-    fun provideWordInfoRepository(
+    fun provideRestaurantRepository(
         db: RestaurantsDatabase,
         api: ApiServices
     ): RestaurantRepository {
@@ -28,7 +28,7 @@ object RestaurantModule {
 
     @Provides
     @Singleton
-    fun provideWordInfoDatabase(app: Application): RestaurantsDatabase {
+    fun provideRestaurantDatabase(app: Application): RestaurantsDatabase {
         return Room.databaseBuilder(
             app, RestaurantsDatabase::class.java, "restaurants_db"
         ).build()
